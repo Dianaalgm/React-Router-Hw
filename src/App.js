@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './Components/Header';
 import Footer from './Components/Footer' ;
 import Home from './Pages/Home';
@@ -15,12 +15,13 @@ const App = () =>{
       <div className="App">
         <Header/>
         <main>
-          <Switch>
-            <Route exact path='/' Component={Home} />
-            <Route exact path='/about' Component={About} />
-            <Route exact path='/products' Component={Product} />
-
-          </Switch>
+          {/* <Switch> */}
+          <Routes>
+            <Route exact path='/' component={Home} />
+            <Route exact path='/about' component={About} />
+            <Route exact path='/products' component={Product} />
+          </Routes>
+          {/* </Switch> */}
 
         </main>
         <Footer/>
